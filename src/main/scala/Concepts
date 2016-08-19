@@ -1,0 +1,28 @@
+//Intervals in streaming
+
+1. Batch Interval
+
+    The time interval in which data is ingested.
+    Each new DStream is created after the time interval is reached
+    Eg: after 1 second, new DStream will be created which will contain multiple RDD's
+
+2. Slide Interval
+
+    The time interval in which transformation is applied on the data
+    Eg: after 2 seconds the result is computed by applying the transformations pervious 3 seconds of data (window interval)
+
+3. Window Interval
+
+    The time interval for which the data is kept and computed for transormation
+    Eg: every 3 seconds of data is taken for computing the result after every 2 seconds (slide interval)
+
+
+//Spark
+
+1. Broadcast variables
+
+    Transferred to all the nodes as is (not distributed in chunks)
+
+2. Accumulators:
+
+    Shared variable across all the nodes.
